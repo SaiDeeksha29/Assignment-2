@@ -21,6 +21,7 @@ public class LineComparison {
 
 		// variables
 		double line1 = 0, line2 = 0;
+		int compareValue;
 
 		int x1 = (int) (Math.floor(Math.random() * 10));
 		int x2 = (int) (Math.floor(Math.random() * 10));
@@ -37,15 +38,17 @@ public class LineComparison {
 		System.out.println("Length of Line 1 is : " + line1);
 		System.out.println("Length of Line 2 is : " + line2);
 
-		// Comparison by equals method
+		// Comparison by compareTo method
 		Double obj1 = new Double(line1);
 		Double obj2 = new Double(line2);
-		boolean compareValue = obj1.equals(obj2);
+		compareValue = obj1.compareTo(obj2);
 
-		if (compareValue) {
+		if (compareValue == 0) {
 			System.out.println("Both the lines are equal");
+		} else if (compareValue < 0) {
+			System.out.println("Line 1 length is smaller than Line 2");
 		} else {
-			System.out.println("Both the lines are not equal");
+			System.out.println("Line 1 length is greater than Line 2");
 		}
 
 	}
